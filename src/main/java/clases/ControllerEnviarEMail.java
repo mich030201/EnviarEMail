@@ -117,7 +117,7 @@ public class ControllerEnviarEMail implements Initializable {
 	
 	@FXML
 	private void onEnviar(ActionEvent e) throws EmailException {
-		
+		boolean enviar = true;
 		Email email = new SimpleEmail();
 		
 		try {
@@ -138,15 +138,16 @@ public class ControllerEnviarEMail implements Initializable {
 			error.setContentText("Ooops, there was an error!");
 
 			error.showAndWait();
+			enviar = false;
 		}
+		 if(enviar == true) {
+			 Alert enviado = new Alert(AlertType.INFORMATION);
+			enviado.setTitle("Mensaje enviado");
+			enviado.setHeaderText(null);
+			enviado.setContentText("Mensaje enviado con exito a '" + model.getEmailDestinatario() + "'");
 
-		Alert enviado = new Alert(AlertType.INFORMATION);
-		enviado.setTitle("Mensaje enviado");
-		enviado.setHeaderText(null);
-		enviado.setContentText("Mensaje enviado con exito a '" + model.getEmailDestinatario() + "'");
-
-		enviado.showAndWait();
-		
+			enviado.showAndWait(); 
+		 }
 	}
 	
 	@FXML
