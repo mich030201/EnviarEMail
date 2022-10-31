@@ -140,7 +140,8 @@ public class ControllerEnviarEMail implements Initializable {
 			error.showAndWait();
 			enviar = false;
 		}
-		 if(enviar == true) {
+		
+		if(enviar == true) {
 			 Alert enviado = new Alert(AlertType.INFORMATION);
 			enviado.setTitle("Mensaje enviado");
 			enviado.setHeaderText(null);
@@ -157,14 +158,6 @@ public class ControllerEnviarEMail implements Initializable {
 	
 	@FXML
 	private void onVaciar(ActionEvent e) throws EmailException {
-//		model.setAsuntoMensaje(" ");
-//		model.setConexionSSL(false);
-//		model.setContrasenia(" ");
-//		model.setEmailDestinatario(" ");
-//		model.setEmailRemitente(" ");
-//		model.setMensaje(" ");
-//		model.setPuerto(" ");
-//		model.setServidorSMTP(" ");
 		
 		asuntoTextField.setText("");
 		contrasenisPasswordField.setText("");
